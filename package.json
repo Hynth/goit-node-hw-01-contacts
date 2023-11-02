@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nanoid": "^5.0.2"
+    "nanoid": "^5.0.2",
+    "shortid": "^2.2.16",
+    "yargs": "^17.7.2"
   }
 }

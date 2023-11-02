@@ -1,8 +1,7 @@
-// import { nanoid } from 'nanoid';
-
 
 const fs = require("node:fs");
 const path = require("node:path");
+const shortid = require('shortid');
 const { stringify } = require("node:querystring");
 
 const contactsPath = path.join(__dirname, "db", "contacts.json");
@@ -29,7 +28,6 @@ function getContactById(contactId) {
 
         const listContacts = JSON.parse(data);
         const contactById = listContacts.filter(c => c["id"] == contactId);
-
         console.log(contactById);
     }); 
 }
@@ -63,16 +61,15 @@ function addContact(name, email, phone) {
             return;
         }
 
-        const listContacts = JSON.parse(data);
-        const newContact = ({
-            "id": 11,
-            "name": name,
-            "email": email,
-            "phone": phone
-        });
-        const newListContact = listContacts.push(newContact);
-
-        console.log(newListContact);
+        const newListContact = [
+            ...JSON.parse(data),
+            {
+                "id": shortid.generate(),
+                "name": name,
+                "email": email,
+                "phone": phone
+            }
+        ];
 
         fs.writeFile(contactsPath, JSON.stringify(newListContact), (err) => {
             if (!!err) {
