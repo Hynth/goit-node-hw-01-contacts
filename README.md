@@ -4,4 +4,5 @@ https://github.com/Hynth/goit-node-hw-01-contacts
 
 ## ScreenShots evidences:
 
-https://monosnap.com/list/6543cd045139f61998c839bf
+1. ScreenShot 1: https://monosnap.com/file/QlWHDdoC4JnuvNfIZwV4Il0da1B5kD
+   ![ScreenShot for --> node index.js --action list ](https://monosnap.com/file/QlWHDdoC4JnuvNfIZwV4Il0da1B5kD)
